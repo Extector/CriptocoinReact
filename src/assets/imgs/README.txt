@@ -1,0 +1,1 @@
+Folder to pack all images from the project

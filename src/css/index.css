@@ -1,0 +1,460 @@
+/*VARIABLES*/
+:root {
+  /*Sections Background*/
+  --section-info-bgcolor: #7650c2;
+  --section-main-bgcolor: #050505;
+
+  /*Label*/
+  --label-border-color: #a071ff;
+  --label-button-color: linear-gradient(180deg, #9167e8 0%, #4b327e 100%);
+  --label-box-color: linear-gradient(180deg, #8b62df 0%, #53388b 100%);
+
+  /*Fonts*/
+  --Poppins: "Poppins", sans-serif;
+  --Roboto: "Roboto", sans-serif;
+  --font-color: #fff;
+  --emphasis-color: #865fd5;
+}
+
+/*-------------------------------------------------------*/
+
+/*GENERAL*/
+html,
+body,
+main {
+  background-color: var(--section-main-bgcolor);
+  font-size: 16px;
+  color: #fff;
+  font-family: var(--Poppins);
+  height: 100vh;
+}
+
+/*-------------------------------------------------------*/
+
+/*DISPLAY NONE*/
+#checkShowPass {
+  display: none;
+}
+
+mark {
+  background: none;
+}
+
+/*DESKTOP ONLY*/
+main .hero {
+  display: none;
+}
+
+/*-------------------------------------------------------*/
+
+/*RIGHT SECTION*/
+/*REGISTER*/
+main .register {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*-------------------------------------------------------*/
+
+/*REGISTER CONTAINER*/
+main .register .container-wrap {
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+}
+
+/*-------------------------------------------------------*/
+
+/*WELCOME*/
+main .register .container-wrap .welcome img {
+  height: 1.5rem;
+}
+
+main .register .container-wrap .welcome h1 {
+  font-weight: bold;
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+main .register .container-wrap .welcome h1 span mark {
+  color: var(--emphasis-color);
+}
+
+/*-------------------------------------------------------*/
+
+/*FORM*/
+main .register .container-wrap .form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 0.8rem;
+  font-weight: bold Medium;
+  margin: 2rem 0 0 0;
+}
+
+/*FORM TITLE*/
+main .register .container-wrap .form h2 {
+  font-size: 1rem;
+  text-align: center;
+  font-weight: bold;
+  color: #7d7d7d;
+  margin-bottom: 0.4rem;
+}
+
+main .register .container-wrap .form h2 mark {
+  color: var(--emphasis-color);
+}
+
+/*-------------------------------------------------------*/
+
+/*FORM GROUP*/
+main .register .container-wrap .form .form-group {
+  position: relative;
+  height: 3rem;
+  margin: 0.7rem 0;
+}
+
+/*-------------------------------------------------------*/
+
+/*FORM GROUP INPUT*/
+main .register .container-wrap .form .form-group .form-input {
+  background: none;
+  border-radius: 0.5rem;
+  border: 1.7px solid #a071ff;
+  width: 100%;
+  height: 2.25rem;
+  color: #7d7d7d;
+  transition: 300ms;
+  box-sizing: border-box;
+  padding: 0 2.6rem;
+}
+
+main .register .container-wrap .form .form-group .form-input:focus {
+  outline: transparent;
+}
+
+/*-------------------------------------------------------*/
+
+/*FORM GROUP LABEL*/
+main .register .container-wrap .form .form-group label {
+  position: absolute;
+  left: 2.5rem;
+  top: 0.6rem;
+  padding: 0 0.3rem;
+  cursor: text;
+  transition: 0.2s all;
+  color: #7d7d7d;
+}
+
+/*LABEL ANIMATION*/
+main .register .container-wrap .form .form-group .form-input:focus + label {
+  background-color: var(--section-main-bgcolor);
+  border-radius: 5px;
+  color: #a071ff;
+  top: -0.6rem;
+  z-index: 5;
+  font-size: small;
+}
+
+main
+  .register
+  .container-wrap
+  .form
+  .form-group
+  .form-input:not(:placeholder-shown).form-input:not(:focus)
+  + label {
+  background-color: var(--section-main-bgcolor);
+  top: -0.6rem;
+}
+
+/*-------------------------------------------------------*/
+
+/*FORM GROUP ICONS*/
+.icon {
+  position: absolute;
+  left: 0;
+  bottom: 1.3rem;
+  padding: 0.1rem 1rem;
+  color: #7d7d7d;
+}
+
+/*-------------------------------------------------------*/
+
+/*FORM GROUP ROW*/
+main .register .container-wrap .form .row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+main .register .container-wrap .form .row .form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+main .register .container-wrap .form .row .form-group .form-input {
+  width: 100%;
+  padding: 1rem;
+}
+
+main .register .container-wrap .form .row .form-group label {
+  top: 0.7rem;
+  left: 0.7rem;
+}
+
+/*-------------------------------------------------------*/
+
+/*FORM PASSWORD INPUT*/
+main .register .container-wrap .form .form-group .password button {
+  background: none;
+  border: none;
+  position: absolute;
+  right: 0.3rem;
+  padding: 0.4rem;
+  color: #7650c2;
+  cursor: pointer;
+}
+
+main .register .container-wrap .form .form-group .password button .img_svg {
+  transition: filter 200ms;
+}
+
+main
+  .register
+  .container-wrap
+  .form
+  .form-group
+  .password
+  button
+  .img_svg:hover {
+  border-radius: 50%;
+  filter: drop-shadow(0px 0px 5px #663ac4);
+  cursor: pointer;
+}
+
+main
+  .register
+  .container-wrap
+  .form
+  .form-group
+  .password
+  button
+  .img_svg
+  path {
+  animation: blink 0.3s linear;
+}
+
+/*-------------------------------------------------------*/
+/*PASSWORD ANIMATION*/
+@keyframes blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*-------------------------------------------------------*/
+
+/*FORM BUTTON*/
+main .register .container-wrap .form .button {
+  cursor: pointer;
+  width: 100%;
+  height: 2.75rem;
+  background: linear-gradient(180deg, #9167e8 0%, #4b327e 100%);
+  border-radius: 0.4rem;
+  text-align: center;
+  color: #fff;
+  font-weight: 550;
+  transition: filter 400ms, opacity 400ms;
+  border: none;
+}
+
+main .register .container-wrap .form .button:hover {
+  filter: drop-shadow(0px 0px 2px #8253e9);
+  opacity: 1px;
+}
+
+/*-------------------------------------------------------*/
+
+/*FORM CHECHBOX*/
+main .register .container-wrap .form .check {
+  display: flex;
+  gap: 1rem;
+  margin: 0.6rem 0 1.3rem 0;
+  justify-self: center;
+  align-items: center;
+  text-align: center;
+  color: #7d7d7d;
+  font-weight: 650;
+}
+
+main .register .container-wrap .form .check input[type="checkbox"] {
+  padding: 0.5rem;
+  border: 1.6px solid var(--section-info-bgcolor);
+  border-radius: 5px;
+  transition: 300ms;
+}
+
+main .register .container-wrap .form .check input[type="checkbox"]:checked {
+  background: url("/src/assets/imgs/checkbox.svg"),
+    linear-gradient(180deg, #8b62df 0%, #53388b 100%);
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: contain;
+  background-size: 0.7rem, 100%;
+  filter: drop-shadow(0px 0px 1.7px #8253e9);
+}
+
+/*Terms and Conditions*/
+main .register .container-wrap .form .check a {
+  color: #a071ff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+main .register .container-wrap .form .check a:hover {
+  color: #5c31b3;
+}
+
+/*-------------------------------------------------------*/
+/*-------------------------------------------------------*/
+
+/*MEDIA QUERY*/
+@media (min-width: 768px) {
+  /*FORM GROUP ROW*/
+  main .register .container-wrap .form .row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1.4rem;
+    flex-direction: initial;
+  }
+
+  main .register .container-wrap .row .form-group {
+    display: flex;
+    width: 50%;
+    padding: 0;
+  }
+  /*-------------------------------------------------------*/
+}
+
+@media (min-width: 1024px) {
+  /*MAIN ==> DESKTOP VIEW*/
+  main {
+    display: flex;
+  }
+
+  main section {
+    display: flex;
+    width: 50%;
+    height: 100vh;
+  }
+
+  /*-------------------------------------------------------*/
+
+  /*DESKTOP ==> LEFT SECTION*/
+  main .hero {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../assets/imgs/Indexdetail.png")
+      var(--section-info-bgcolor);
+    background-repeat: no-repeat;
+    background-position: left;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+  }
+
+  /*-------------------------------------------------------*/
+
+  /*HERO CONTAINER*/
+  /*GRAPHIC*/
+  main .hero .container img {
+    max-width: 25rem;
+    max-height: 25em;
+  }
+
+  /*BOTTOM BIG TEXT*/
+  main .hero .container h1 {
+    margin-top: 2rem;
+    font-size: 1.7rem;
+  }
+
+  main .hero .container h1 .mark {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  main .hero .container h1 .mark.money {
+    color: #170147;
+  }
+
+  main .hero .container h1 .mark.invest {
+    color: #230b56;
+  }
+
+  /*ASIDE TEXT*/
+  main .hero .container p {
+    font-size: 0.7rem;
+  }
+
+  /*-------------------------------------------------------*/
+
+  /*FORM FOR LARGER WIDTH*/
+  /*REGISTER FORM*/
+  main .register .container-wrap{
+    max-width: 30rem;
+  }
+
+  main .register .container-wrap .form h2 {
+    font-size: 1rem;
+    margin: 1rem 0 2rem 0;
+  }
+
+  /*-------------------------------------------------------*/
+}
+
+@media (min-height: 800px) {
+  html,
+  body{
+    font-size: 20px;
+  }
+}
+
+@media (min-height: 860px){
+  html,
+  body{
+    font-size: 30px;
+  }
+}
+
+@media (min-height: 896px){
+  html,
+  body{
+    font-size: 20px;
+  }
+}
+
+@media (height: 914px){
+  html,
+  body{
+    font-size: 20px;
+  }
+}
+
+@media (height: 1368px){
+  html,
+  body{
+    font-size: 30px;
+  }
+}
+
+
